@@ -1,10 +1,9 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-// import App from './App.jsx'
+import react from 'react'
+import ReactDOM from 'react-dom/client'
+import { createRoot } from "react-dom/client";
+import { Nav } from "./layout/Nav.jsx";
 // import './index.css'
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-  //   {/* <App /> */}
-  </StrictMode>,
-)
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+root.render(<Nav />);
