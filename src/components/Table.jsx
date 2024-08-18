@@ -136,47 +136,50 @@
 //   useEffect(() => {
 //     setTimeout(actualizarTotalConsumo, 500);
 //   }, []);
-import './../css/global.css'
-import './../css/Table.css'
+import "./../css/global.css";
+import "./../css/Table.css";
 
 const list = ["Dia", "Consumo", "Dispositivos", "Fecha", "Acciones"];
-const fila = []
+const botones = ["Limpiar", "PDF", "Enviar"];
+const fila = [];
 
 for (let index = 1; index < 31; index++) {
-  fila.push(index)
+  fila.push(index);
 }
 
 let date = new Date();
-let month = (date.getMonth().toString().length < 2) ? `0${date.getMonth()+1}` : date.getMonth()+1;
-
+let month =
+  date.getMonth().toString().length < 2
+    ? `0${date.getMonth() + 1}`
+    : date.getMonth() + 1;
 
 export function Table() {
   return (
-    <div id='container'>
+    <div id="container">
+      <h1>Consumo mensual</h1>
       {/* <div data-hx-get="/nav" data-hx-trigger="load" data-hx-swap="outerHTML" data-hx-target="this"></div> */}
       <main>
-        <header>
-          <h1>Consumo mensual</h1>
-        </header>
         <section>
           <table id="table">
             <thead>
               <tr>
-                {list.map(item => (
+                {list.map((item) => (
                   <th> {item} </th>
                 ))}
               </tr>
             </thead>
             <tbody>
-              {fila.map(dia => (
+              {fila.map((dia) => (
                 <tr>
                   <td>{dia}</td>
-                  <td></td>
+                  <td className="consumo"></td>
                   <td></td>
                   <td>
-                    {
-                    ((dia.toString().length < 2) ? `0${dia}` : dia) + '/' + month + '/' + date.getFullYear()
-                    }
+                    {(dia.toString().length < 2 ? `0${dia}` : dia) +
+                      "/" +
+                      month +
+                      "/" +
+                      date.getFullYear()}
                   </td>
                   <td>
                     <button>Editar</button>
@@ -189,6 +192,14 @@ export function Table() {
 
             </tbody> */}
           </table>
+        </section>
+        <section>
+          <span id="consumoTotal">146 KWh</span>
+          <div>
+            {botones.map((btn) => (
+              <button>{btn}</button>
+            ))}
+          </div>
         </section>
         {/* <section>
           <h2 id="totalConsumo">Total: {totalConsumo.toFixed(2)} kWh</h2>
