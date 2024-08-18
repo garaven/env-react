@@ -18,7 +18,7 @@ const rutas = [
   "/objetivos",
   "listado",
   "/perfil",
-  "/cerrarSesion",
+  "/cerrarSesion"
 ];
 
 let numero = 0;
@@ -28,7 +28,7 @@ export function Nav() {
     <nav>
       <span>Envirosense</span>
       <ul>
-        {secciones.map((item) => (
+        {secciones.map(item => (
           <li>
             <a href={rutas[numero++]}>{item}</a>
           </li>

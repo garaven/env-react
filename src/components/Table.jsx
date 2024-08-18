@@ -136,14 +136,23 @@
 //   useEffect(() => {
 //     setTimeout(actualizarTotalConsumo, 500);
 //   }, []);
+import './../css/global.css'
+import './../css/Table.css'
+
+const list = ["Dia", "Consumo", "Dispositivos", "Fecha", "Acciones"];
+const fila = []
+
+for (let index = 1; index < 31; index++) {
+  fila.push(index)
+}
+
+let date = new Date();
+let month = (date.getMonth().toString().length < 2) ? `0${date.getMonth()+1}` : date.getMonth()+1;
 
 
-const list = ["dia", "consumo", "dispositivos", "fecha"];
-let index = 0;
-
-export function Prueba(){
-    return (
-    <div>
+export function Table() {
+  return (
+    <div id='container'>
       {/* <div data-hx-get="/nav" data-hx-trigger="load" data-hx-swap="outerHTML" data-hx-target="this"></div> */}
       <main>
         <header>
@@ -153,21 +162,28 @@ export function Prueba(){
           <table id="table">
             <thead>
               <tr>
-                {
-                  list.map((item) => (
-                    <th> {item} </th>
-                  ))
-                }
+                {list.map(item => (
+                  <th> {item} </th>
+                ))}
               </tr>
             </thead>
             <tbody>
-              {
-                Array.slice(index, index + 30).map((cell, i) => (
+              {fila.map(dia => (
+                <tr>
+                  <td>{dia}</td>
+                  <td></td>
+                  <td></td>
                   <td>
-                    
+                    {
+                    ((dia.toString().length < 2) ? `0${dia}` : dia) + '/' + month + '/' + date.getFullYear()
+                    }
                   </td>
-                ))
-              }
+                  <td>
+                    <button>Editar</button>
+                    <button>Guardar</button>
+                  </td>
+                </tr>
+              ))}
             </tbody>
             {/* <tbody data-hx-get="/datosTabla" data-hx-trigger="load">
 

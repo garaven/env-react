@@ -1,0 +1,58 @@
+#container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+main h1 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+main section {
+  height: 450px;
+  border: 1px solid #000;
+  overflow-y: scroll;
+  position: relative;
+}
+
+th, td {
+  width: 170px;
+  /* border: 1px solid #000; */
+  padding: 3px 5px;
+}
+
+tbody tr {
+  background-color: #dcdcdc;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #efefef;
+}
+
+thead tr:first-child {
+  background-color: #fff;
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+
+tr td:first-child, tr td:nth-child(4) {
+  text-align: end;
+}
+
+thead th:first-child, tr td {
+  width: auto;
+}
+
+tr td:last-child {
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+button {
+  padding: 3px 5px;
+}
