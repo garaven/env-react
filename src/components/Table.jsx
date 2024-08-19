@@ -136,7 +136,7 @@
 //   useEffect(() => {
 //     setTimeout(actualizarTotalConsumo, 500);
 //   }, []);
-import "./../css/global.css";
+// import "./../css/global.css";
 import "./../css/Table.css";
 
 const list = ["Dia", "Consumo", "Dispositivos", "Fecha", "Acciones"];
