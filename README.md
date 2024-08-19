@@ -1,2 +1,2 @@
 # Env with react 🐱‍👤
-<img width="960" alt="image" src="https://github.com/user-attachments/assets/c25c8291-2994-411d-9cf9-e97d7bba28b9">
+<img width="960" alt="image" src="https://github.com/user-attachments/assets/5dbabe48-bd3d-48e8-9bbb-61f10c16606c">
